@@ -1,0 +1,11 @@
+<% provide(:title, 'All users') %>
+<h1> All users </h1>
+
+<table class="table table-hover">
+  <% @users.each do |user| %>
+    <tr>
+      <td class="col-md-1"><%= gravatar_for user, size: 48 %></td>
+      <td><%= link_to user.name, user %></td>
+    </li>
+  <% end %>
+</table>

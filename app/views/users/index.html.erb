@@ -1,11 +1,19 @@
 <% provide(:title, 'All users') %>
 <h1> All users </h1>
 
+<%= will_paginate %>
 <table class="table table-hover">
   <% @users.each do |user| %>
     <tr>
       <td class="col-md-1"><%= gravatar_for user, size: 48 %></td>
       <td><%= link_to user.name, user %></td>
-    </li>
+      <% if current_user.admin? && !current_user?(user) %>
+        <td>
+          | <%= link_to "delete", user, method: :delete,
+                                        data: {confirm: "You sure?"} %>
+        </td>
+      <% end %>
+    </tr>
   <% end %>
 </table>
+<%= will_paginate %>

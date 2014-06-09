@@ -14,6 +14,7 @@ class StaticPagesController < ApplicationController
   end
 
   def following
+    @microposts = current_user.feed.paginate(page: params[:page])
   end
 
 end

@@ -1,1 +1,4 @@
 <% provide(:title, 'Following') %>
+<%= will_paginate @microposts %>
+    <%= render 'shared/microposts_feed' %>
+  <%= will_paginate @microposts %>

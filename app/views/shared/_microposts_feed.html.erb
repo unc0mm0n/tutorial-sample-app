@@ -1,0 +1,7 @@
+<% if @microposts.any? %>
+  <ol class="microposts">
+    <%= render partial: 'microposts/micropost', collection: @microposts %>
+  </ol>
+<% end %>
+
+

@@ -10,7 +10,7 @@
   </aside>
   <div class="col-md-8">
   <%= will_paginate @microposts %>
-  <%= render @microposts %>
+    <%= render 'shared/microposts_feed' %>
   <%= will_paginate @microposts %>
   </div>
 </div>
@@ -26,8 +26,11 @@
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
+  <%= will_paginate @microposts %>
+    <%= render 'shared/microposts_feed' %>
+  <%= will_paginate @microposts %>
 <% end %>
-
+</br>
 <%= link_to image_tag("rails.png", alt: "Ruby on rails tutorial"),
     'http://rubyonrails.org/' %>
 

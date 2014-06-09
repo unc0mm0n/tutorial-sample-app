@@ -67,4 +67,5 @@ class UsersController < ApplicationController
 
     def admin_user
       redirect_to root_url, flash: { danger: "Unauthorized to delete users!"} unless current_user.admin?
+    end
 end

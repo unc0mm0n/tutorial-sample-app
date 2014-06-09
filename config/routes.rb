@@ -1,13 +1,16 @@
 TutorialSampleApp::Application.routes.draw do
 
-  resources :users, except: [:new]
-  resources :sessions, only: [:create]
+  resources :users,       except: [:new]
+  resources :sessions,    only: [:create]
+  resources :microposts,  only: [:create, :destroy]
 
   root 'static_pages#home'
 
-  get 'help',    to: "static_pages#help"
-  get 'about',   to: "static_pages#about"
-  get 'contact', to: "static_pages#contact"
+  get 'help',      to: "static_pages#help"
+  get 'about',     to: "static_pages#about"
+  get 'contact',   to: "static_pages#contact"
+  get 'following', to: "static_pages#following"
+
   get 'signup',  to: "users#new"
   get 'signin',  to: "sessions#new"
   delete 'signout',  to: "sessions#destroy"

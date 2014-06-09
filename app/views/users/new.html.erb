@@ -5,7 +5,7 @@
   </div>
   <div class = "col-md-6">
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+      <%= render 'shared/error_messages', object: f.object %>
 
       <div class = "formgroup">
         <%= f.label :name %>

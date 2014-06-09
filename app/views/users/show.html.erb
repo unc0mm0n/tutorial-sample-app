@@ -6,7 +6,18 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-    <section>
+    </section>
     <%= @user.email %>
   </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% else %>
+      <h3> This user doesn't have any chirps yet yet :(</h3>
+    <% end %>
+  </div>
 </div>
